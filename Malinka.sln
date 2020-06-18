@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malinka", "Malinka\Malinka.csproj", "{2BA4A315-85C5-4A52-A37D-D08533F28609}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malinka.Core", "Malinka.Core\Malinka.Core.csproj", "{1CCFF444-FBE1-4D18-B033-1CFA5089DD2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malinka.API", "Malinka.API\Malinka.API.csproj", "{3707FA5A-1804-4178-8911-26D2C332AE1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{25D26EE1-D9A5-4F81-86D3-6E80720B8ED2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1F91398A-1EC3-4840-A792-D643077F952F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Malinka.Lang", "Malinka.Lang\Malinka.Lang.csproj", "{E2677770-E199-46A6-82D5-C2E82C437E9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BA4A315-85C5-4A52-A37D-D08533F28609}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA4A315-85C5-4A52-A37D-D08533F28609}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA4A315-85C5-4A52-A37D-D08533F28609}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA4A315-85C5-4A52-A37D-D08533F28609}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CCFF444-FBE1-4D18-B033-1CFA5089DD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CCFF444-FBE1-4D18-B033-1CFA5089DD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CCFF444-FBE1-4D18-B033-1CFA5089DD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CCFF444-FBE1-4D18-B033-1CFA5089DD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3707FA5A-1804-4178-8911-26D2C332AE1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3707FA5A-1804-4178-8911-26D2C332AE1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3707FA5A-1804-4178-8911-26D2C332AE1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3707FA5A-1804-4178-8911-26D2C332AE1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2677770-E199-46A6-82D5-C2E82C437E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2677770-E199-46A6-82D5-C2E82C437E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2677770-E199-46A6-82D5-C2E82C437E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2677770-E199-46A6-82D5-C2E82C437E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BA4A315-85C5-4A52-A37D-D08533F28609} = {25D26EE1-D9A5-4F81-86D3-6E80720B8ED2}
+		{1CCFF444-FBE1-4D18-B033-1CFA5089DD2F} = {1F91398A-1EC3-4840-A792-D643077F952F}
+		{3707FA5A-1804-4178-8911-26D2C332AE1A} = {25D26EE1-D9A5-4F81-86D3-6E80720B8ED2}
+		{E2677770-E199-46A6-82D5-C2E82C437E9C} = {1F91398A-1EC3-4840-A792-D643077F952F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {097D4B6C-BDAA-4910-9B31-F5F3A60D50D9}
+	EndGlobalSection
+EndGlobal

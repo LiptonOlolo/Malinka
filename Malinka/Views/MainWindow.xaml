@@ -1,0 +1,51 @@
+﻿<Window 
+    x:Class="Malinka.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Malinka"
+    xmlns:vm="clr-namespace:Malinka.ViewModels"
+    mc:Ignorable="d"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+    TextElement.FontWeight="Regular"
+    TextElement.FontSize="14"
+    TextOptions.TextFormattingMode="Ideal" 
+    TextOptions.TextRenderingMode="Auto"    
+    FontFamily="{DynamicResource MaterialDesignFont}"
+    Background="{DynamicResource MaterialDesignPaper}"
+    Closing="Window_Closing"
+    Loaded="Window_Loaded"
+    Title="Malinka" 
+    Height="500" 
+    Width="500"
+    MinHeight="500" 
+    MinWidth="500"
+    ResizeMode="CanResizeWithGrip"
+    d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel, IsDesignTimeCreatable=True}">
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static local:MainWindow.HotkeyCommand}" Executed="HotkeyExecute"/>
+    </Window.CommandBindings>
+
+    <Grid>
+        <Image Source="pack://application:,,,/Images/back.jpg"
+               Stretch="UniformToFill"
+               Margin="-5">
+            <Image.Effect>
+                <BlurEffect Radius="0"/>
+            </Image.Effect>
+        </Image>
+
+        <materialDesign:DialogHost Identifier="{Binding DialogIdentifier.Identifier}">
+            <Grid>
+                <ContentControl prism:RegionManager.RegionName="{x:Static local:RegionNames.RootRegion}"/>
+                <materialDesign:Snackbar MessageQueue="{Binding MessageQueue}"/>
+            </Grid>
+        </materialDesign:DialogHost>
+    </Grid>
+
+</Window>

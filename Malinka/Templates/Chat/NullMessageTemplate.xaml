@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="NullMessageTemplate">
+        <TextBox Text="{Binding StringFormat='Error message: {0}'}"
+                 Style="{StaticResource MessageBodyTextBox}"/>
+    </DataTemplate>
+
+</ResourceDictionary>

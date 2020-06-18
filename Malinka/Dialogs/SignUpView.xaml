@@ -1,0 +1,26 @@
+﻿<UserControl 
+    x:Class="Malinka.Dialogs.SignUpView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Malinka.Dialogs"
+    xmlns:res="clr-namespace:Malinka.Lang.Properties;assembly=Malinka.Lang"
+    Template="{StaticResource DialogHostUserControl}"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=local:SignUpViewModel, IsDesignTimeCreatable=True}">
+
+    <StackPanel Style="{StaticResource StackPanel15Margin}"
+                Width="250">
+
+        <TextBox Text="{Binding User.EMail, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                 material:HintAssist.Hint="{x:Static res:Resources.EMail}"/>
+
+        <TextBox Text="{Binding User.Nickname, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"
+                 material:HintAssist.Hint="{x:Static res:Resources.Nickname}"/>
+
+        <local:CloseDialogButtons CloseButtonContent="{x:Static res:Resources.SignUp}"/>
+    </StackPanel>
+
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Malinka.Core.Models;assembly=Malinka.Core"
+    mc:Ignorable="d">
+
+    <DataTemplate x:Key="TextMessageTemplate">
+        <Border CornerRadius="8"
+                Margin="5"
+                BorderBrush="{DynamicResource SecondaryHueDarkBrush}"
+                BorderThickness="0.6"
+                d:DataContext="{d:DesignInstance Type=models:MalinkaMessage, IsDesignTimeCreatable=True}">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="#182533"/>
+                    <Setter Property="HorizontalAlignment" Value="Left"/>
+
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=(models:MalinkaMessage.IsOriginNative)}" Value="True">
+                            <Setter Property="Background" Value="#2B5278"/>
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <StackPanel>
+                <TextBox Text="{Binding Body}"
+                         Style="{StaticResource MessageBodyTextBox}"/>
+
+                <TextBlock Text="{Binding Date}" 
+                           Foreground="{DynamicResource MaterialDesignDarkForeground}"
+                           Style="{StaticResource BaseTextBlock}"
+                           HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
+
+</ResourceDictionary>

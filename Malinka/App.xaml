@@ -1,0 +1,41 @@
+﻿<dryioc:PrismApplication
+    xmlns:dryioc="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Wpf"
+    x:Class="Malinka.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:converters="clr-namespace:Malinka.Converters">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <material:BundledTheme BaseTheme="Light" 
+                                       PrimaryColor="Red" 
+                                       SecondaryColor="Red"/>
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/Styles/Control.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/TextBlock.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/StackPanel.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/TextBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/PasswordBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/Button.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/ColorZone.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/ItemsControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/HyperLink.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/Border.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/PackIcon.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Styles/CheckBox.xaml"/>
+
+                <ResourceDictionary Source="pack://application:,,,/Dialogs/BaseDialogView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <BitmapImage UriSource="pack://application:,,,/Images/user.png" x:Key="NullAvatar"/>
+            <converters:ByteBitmapSourceConverter x:Key="ByteBitmapSourceConverter"/>
+            <converters:IntToVisibilityConverter x:Key="IntToVisibilityConverter" CollapsedValue="-1"/>
+            <converters:IntToVisibilityConverter x:Key="ReverseIntToVisibilityConverter" CollapsedValue="-1" Reverse="True"/>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</dryioc:PrismApplication>

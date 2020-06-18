@@ -1,0 +1,26 @@
+﻿<local:BindableUserControl
+    x:Class="Malinka.Controls.UserNickname"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Malinka.Controls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:res="clr-namespace:Malinka.Lang.Properties;assembly=Malinka.Lang"
+    Style="{StaticResource CenterControl}">
+
+    <Grid DataContext="{Binding RelativeSource={RelativeSource AncestorType=local:BindableUserControl}, Path=User}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{Binding Name}"
+                   Style="{StaticResource BaseTextBlock}"/>
+
+        <materialDesign:PackIcon Kind="CheckDecagram"
+                                 Visibility="{Binding Verified, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                 ToolTip="{x:Static res:Resources.IsVerified}"
+                                 Grid.Column="1"
+                                 Margin="0 5"/>
+    </Grid>
+
+</local:BindableUserControl>
