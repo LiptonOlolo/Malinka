@@ -1,4 +1,5 @@
 ﻿using DevExpress.Mvvm;
+using Malinka.Core.Helpers.ChangeProps;
 using Malinka.Core.Models;
 using Prism.Regions;
 
@@ -12,7 +13,23 @@ namespace Malinka.ViewModels.Base
         /// <summary>
         /// User.
         /// </summary>
-        public MalinkaUser User { get; private set; }
+        public MalinkaUser User { get; }
+
+        /// <summary>
+        /// Empty constructor.
+        /// </summary>
+        public NavigationViewModel()
+        {
+
+        }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public NavigationViewModel(MalinkaUser user)
+        {
+            User = user;
+        }
 
         /// <summary>
         /// Navigated to current view.
@@ -24,7 +41,7 @@ namespace Malinka.ViewModels.Base
             {
                 var user = navigationContext.Parameters["user"] as MalinkaUser;
 
-                User = user;
+                User.SetAllProperties(user);
             }
         }
 

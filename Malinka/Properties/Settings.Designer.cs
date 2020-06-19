@@ -25,66 +25,6 @@ namespace Malinka.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double left {
-            get {
-                return ((double)(this["left"]));
-            }
-            set {
-                this["left"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double top {
-            get {
-                return ((double)(this["top"]));
-            }
-            set {
-                this["top"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double height {
-            get {
-                return ((double)(this["height"]));
-            }
-            set {
-                this["height"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public double width {
-            get {
-                return ((double)(this["width"]));
-            }
-            set {
-                this["width"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
-        public global::System.Windows.WindowState state {
-            get {
-                return ((global::System.Windows.WindowState)(this["state"]));
-            }
-            set {
-                this["state"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool rememberMe {
             get {
@@ -108,22 +48,21 @@ namespace Malinka.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool themeIsDark {
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        public global::System.Windows.GridLength contactsWidth {
             get {
-                return ((bool)(this["themeIsDark"]));
+                return ((global::System.Windows.GridLength)(this["contactsWidth"]));
             }
             set {
-                this["themeIsDark"] = value;
+                this["contactsWidth"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ru-RU")]
-        public string lang {
+        public global::Malinka.Lang.Models.Language lang {
             get {
-                return ((string)(this["lang"]));
+                return ((global::Malinka.Lang.Models.Language)(this["lang"]));
             }
             set {
                 this["lang"] = value;
@@ -132,13 +71,24 @@ namespace Malinka.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("250")]
-        public global::System.Windows.GridLength contactsWidth {
+        public global::Malinka.Models.WindowSettings MainWindowSettings {
             get {
-                return ((global::System.Windows.GridLength)(this["contactsWidth"]));
+                return ((global::Malinka.Models.WindowSettings)(this["MainWindowSettings"]));
             }
             set {
-                this["contactsWidth"] = value;
+                this["MainWindowSettings"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/LiptonOlolo/Malinka")]
+        public string malinkaUrl {
+            get {
+                return ((string)(this["malinkaUrl"]));
+            }
+            set {
+                this["malinkaUrl"] = value;
             }
         }
     }

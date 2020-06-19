@@ -36,10 +36,10 @@
             <TextBlock HorizontalAlignment="Center"
                        Style="{StaticResource BaseTextBlock}">
                 
-                <Hyperlink Command="{Binding SetEnglishCommand}"
+                <Hyperlink Command="{Binding ShowLanguageSelectorCommand}"
                            Style="{StaticResource HyperLinkBase}">
                     
-                    <Run Text="{x:Static res:Resources.ContinueInEnglish}"
+                    <Run Text="{x:Static res:Resources.ChangeLanguageEN}"
                          Foreground="{DynamicResource PrimaryHueMidBrush}"/>
                 </Hyperlink>
             </TextBlock>

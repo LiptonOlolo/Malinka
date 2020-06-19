@@ -3,15 +3,16 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:prism="http://prismlibrary.com/"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vm="clr-namespace:Malinka.ViewModels"
-    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:behaviors="clr-namespace:Malinka.Behaviors"
     xmlns:controls="clr-namespace:Malinka.Controls"
-    xmlns:chat="clr-namespace:Malinka.Templates.Chat"
+    xmlns:chatleftmenu="clr-namespace:Malinka.Controls.ChatLeftMenu"
     xmlns:res="clr-namespace:Malinka.Lang.Properties;assembly=Malinka.Lang"
+    xmlns:chat="clr-namespace:Malinka.Templates.Chat"
+    xmlns:vm="clr-namespace:Malinka.ViewModels"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d"
     d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}">
@@ -35,7 +36,7 @@
 
     <material:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
         <material:DrawerHost.LeftDrawerContent>
-            <controls:ChatLeftMenu/>
+            <chatleftmenu:MainMenu/>
         </material:DrawerHost.LeftDrawerContent>
 
         <Grid>
@@ -61,7 +62,7 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <ToggleButton IsChecked="{Binding LeftMenuOpened, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                    <ToggleButton IsChecked="{Binding MainMenuStatus.MenuOpened}"
                                   HorizontalAlignment="Left"
                                   VerticalAlignment="Center"
                                   Margin="5" 
@@ -125,7 +126,7 @@
                 <Border DockPanel.Dock="Bottom"
                         Background="{DynamicResource MaterialDesignPaper}">
                     <TextBox Text="{Binding MessageText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                             Style="{StaticResource MaterialDesignTextBox}"
+                             VerticalScrollBarVisibility="Auto"
                              material:TextFieldAssist.DecorationVisibility="Collapsed"
                              BorderThickness="0"
                              TextWrapping="Wrap"
@@ -135,7 +136,8 @@
                              MaxHeight="120"
                              MaxLength="255"
                              Margin="10"
-                             material:HintAssist.Hint="{x:Static res:Resources.ChatMessageBox}">
+                             material:HintAssist.Hint="{x:Static res:Resources.ChatMessageBox}"
+                             Style="{StaticResource MaterialDesignTextBox}">
                         <TextBox.ToolTip>
                             <TextBlock>
                                 <Run Text="{x:Static res:Resources.ChatMessageBox_ToolTip1}"/>

@@ -22,4 +22,24 @@
         </Style.Triggers>
     </Style>
 
+    <Style TargetType="Hyperlink" x:Key="HyperLinkMenu">
+        <Setter Property="TextDecorations" Value="{x:Null}"/>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextBlock.TextDecorations">
+                    <Setter.Value>
+                        <TextDecorationCollection>
+                            <TextDecoration Location="Underline">
+                                <TextDecoration.Pen>
+                                    <Pen Brush="{DynamicResource MaterialDesignBody}"/>
+                                </TextDecoration.Pen>
+                            </TextDecoration>
+                        </TextDecorationCollection>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
 </ResourceDictionary>

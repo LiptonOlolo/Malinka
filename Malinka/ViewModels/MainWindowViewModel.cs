@@ -1,7 +1,8 @@
 ﻿using DryIoc;
+using Malinka.Models;
+using Malinka.Properties;
 using MaterialDesignThemes.Wpf;
 using MaterialDesignXaml.DialogsHelper;
-using System.Windows.Input;
 
 namespace Malinka.ViewModels
 {
@@ -21,6 +22,11 @@ namespace Malinka.ViewModels
         public ISnackbarMessageQueue MessageQueue { get; }
 
         /// <summary>
+        /// Window settings.
+        /// </summary>
+        public WindowSettings WindowSettings { get; }
+
+        /// <summary>
         /// Ctor for design.
         /// </summary>
         public MainWindowViewModel()
@@ -35,6 +41,8 @@ namespace Malinka.ViewModels
         {
             MessageQueue = messageQueue;
             DialogIdentifier = container.ResolveRootDialogIdentifier();
+
+            WindowSettings = Settings.Default.MainWindowSettings;
         }
     }
 }

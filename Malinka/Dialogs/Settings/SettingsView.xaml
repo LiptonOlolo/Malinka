@@ -7,7 +7,10 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:controls="clr-namespace:Malinka.Controls"
     xmlns:res="clr-namespace:Malinka.Lang.Properties;assembly=Malinka.Lang"
-    mc:Ignorable="d">
+    xmlns:vm="clr-namespace:Malinka.Dialogs.Settings"
+    Template="{StaticResource DialogHostUserControl}"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=vm:SettingsViewModel, IsDesignTimeCreatable=True}">
 
     <StackPanel>
         <TextBlock Text="{x:Static res:Resources.Menu_Settings}"
@@ -16,21 +19,21 @@
                    Style="{StaticResource TitleBlock}"/>
 
         <materialDesign:ColorZone Mode="PrimaryDark">
-            <StackPanel>
+            <StackPanel Style="{StaticResource StackPanel15Margin}">
                 <controls:UserAvatar User="{Binding User}"/>
                 <controls:UserNickname User="{Binding User}"/>
             </StackPanel>
         </materialDesign:ColorZone>
 
-        <controls:MenuButton Command="{Binding ShowContactsCommand}"
+        <controls:MenuButton Command="{Binding ShowSelectLanguageCommand}"
                              Icon="Translate" 
                              Text="{x:Static res:Resources.Menu_Menu_SelectLanguage}"/>
 
-        <controls:MenuButton Command="{Binding ShowSettingsCommand}"
+        <controls:MenuButton Command="{Binding ShowColorSelectorCommand}"
                              Icon="Palette"
                              Text="{x:Static res:Resources.Menu_Menu_Colors}"/>
 
-        <controls:MenuButton Command="{Binding ShowSettingsCommand}"
+        <controls:MenuButton Command="{Binding CloseDialogCommand}"
                              Icon="Close"
                              Text="{x:Static res:Resources.Close}"/>
     </StackPanel>

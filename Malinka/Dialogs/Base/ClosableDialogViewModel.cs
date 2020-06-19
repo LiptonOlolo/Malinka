@@ -1,15 +1,14 @@
 ﻿using DevExpress.Mvvm;
 using DryIoc;
 using MaterialDesignXaml.DialogsHelper;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Malinka.Dialogs
+namespace Malinka.Dialogs.Base
 {
     /// <summary>
     /// Base dialog view model.
     /// </summary>
-    abstract class BaseDialogViewModel : IClosableDialog
+    abstract class ClosableDialogViewModel : IClosableDialog
     {
         /// <summary>
         /// Owner identifier.
@@ -19,7 +18,7 @@ namespace Malinka.Dialogs
         /// <summary>
         /// Empty constructor.
         /// </summary>
-        public BaseDialogViewModel()
+        public ClosableDialogViewModel()
         {
 
         }
@@ -27,10 +26,10 @@ namespace Malinka.Dialogs
         /// <summary>
         /// Constructor.
         /// </summary>
-        public BaseDialogViewModel(IContainer container)
+        public ClosableDialogViewModel(IContainer container)
         {
             OwnerIdentifier = container.ResolveRootDialogIdentifier();
-            CloseDialogCommand = new AsyncCommand(CloseDialog, CanCloseDialog);
+            CloseDialogCommand = new DelegateCommand(CloseDialog);
         }
 
         /// <summary>
@@ -39,14 +38,11 @@ namespace Malinka.Dialogs
         public ICommand CloseDialogCommand { get; }
 
         /// <summary>
-        /// Can close dialog.
-        /// </summary>
-        /// <returns></returns>
-        protected abstract bool CanCloseDialog();
-
-        /// <summary>
         /// Close dialog.
         /// </summary>
-        protected abstract Task CloseDialog();
+        protected void CloseDialog()
+        {
+            OwnerIdentifier.Close();
+        }
     }
 }

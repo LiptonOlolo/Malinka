@@ -45,15 +45,6 @@ namespace Malinka.API.Models
         }
 
         /// <summary>
-        /// Remove item from collection.
-        /// </summary>
-        /// <param name="user">User.</param>
-        public void Remove(MalinkaUser user)
-        {
-            base.RemoveItem(this.IndexOf(user));
-        }
-
-        /// <summary>
         /// Remove item from collection by id.
         /// </summary>
         /// <param name="userId">User id.</param>

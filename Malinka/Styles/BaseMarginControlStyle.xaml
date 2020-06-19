@@ -1,0 +1,22 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Style x:Key="MarginControl" TargetType="FrameworkElement">
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="Border" x:Key="Border5Margin" BasedOn="{StaticResource MarginControl}"/>
+
+    <Style TargetType="CheckBox" BasedOn="{StaticResource MaterialDesignCheckBox}">
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="material:PackIcon" BasedOn="{StaticResource MarginControl}">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryHueLightBrush}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="BaseTextBlock" BasedOn="{StaticResource MarginControl}"/>
+
+</ResourceDictionary>

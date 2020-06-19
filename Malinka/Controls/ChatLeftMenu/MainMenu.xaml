@@ -1,0 +1,62 @@
+﻿<DockPanel 
+    x:Class="Malinka.Controls.ChatLeftMenu.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:Malinka.Controls"
+    xmlns:local="clr-namespace:Malinka.Controls.ChatLeftMenu"
+    xmlns:res="clr-namespace:Malinka.Lang.Properties;assembly=Malinka.Lang"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d"
+    MinWidth="250"
+    d:DataContext="{d:DesignInstance Type=local:MainMenuViewModel, IsDesignTimeCreatable=True}">
+
+    <DockPanel.Resources>
+        <Style TargetType="controls:HyperTextBlock">
+            <Setter Property="HyperLinkForeground" Value="{DynamicResource MaterialDesignBody}"/>
+            <Setter Property="HyperLinkStyle" Value="{StaticResource HyperLinkMenu}"/>
+        </Style>
+    </DockPanel.Resources>
+
+    <materialDesign:ColorZone Mode="PrimaryDark"
+                              DockPanel.Dock="Top">
+        <StackPanel Style="{StaticResource StackPanel15Margin}">
+            <controls:UserAvatar User="{Binding User}"/>
+            <controls:UserNickname User="{Binding User}"/>
+        </StackPanel>
+    </materialDesign:ColorZone>
+
+    <controls:MenuButton Command="{Binding ShowContactsCommand}"
+                         Icon="Account" 
+                         Text="{x:Static res:Resources.Menu_Contacts}"
+                         DockPanel.Dock="Top"/>
+
+    <controls:MenuButton Command="{Binding ShowSettingsCommand}"
+                         Icon="Settings"
+                         Text="{x:Static res:Resources.Menu_Settings}"
+                         DockPanel.Dock="Top"/>
+
+    <controls:MenuButton Command="{Binding LogOutCommand}"
+                         Icon="ExitToApp"
+                         Text="{x:Static res:Resources.Menu_Exit}"
+                         DockPanel.Dock="Top"/>
+
+    <StackPanel DockPanel.Dock="Bottom"
+                VerticalAlignment="Bottom"
+                Margin="25">
+        <controls:HyperTextBlock HyperLinkText="{x:Static res:Resources.MalinkaDesktop}"
+                                 HyperLinkTextFontWeight="SemiBold"
+                                 HyperLinkCommand="{Binding OpenMalinkaDesktopCommand}"/>
+
+        <StackPanel Orientation="Horizontal">
+            <controls:HyperTextBlock HyperLinkText="{Binding Version, StringFormat={x:Static res:Resources.MalinkaVersion}}"/>
+
+            <TextBlock Text=" ― "/>
+
+            <controls:HyperTextBlock HyperLinkText="{x:Static res:Resources.MalinkaAbout}"/>
+        </StackPanel>
+    </StackPanel>
+</DockPanel>

@@ -1,5 +1,6 @@
 ﻿using DryIoc;
 using Malinka.API.Client.Interfaces;
+using Malinka.Dialogs.Base;
 using Malinka.Lang.Properties;
 using Malinka.Models;
 using MaterialDesignXaml.DialogsHelper;
@@ -12,7 +13,7 @@ namespace Malinka.Dialogs
     /// Sign up view model.
     /// </summary>
     [DialogName(nameof(SignUpView))]
-    class SignUpViewModel : BaseDialogViewModel, IDialogIdentifier
+    class SignUpViewModel : CanClosableDialogViewModel, IDialogIdentifier
     {
         /// <summary>
         /// Identifier.

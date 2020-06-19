@@ -2,35 +2,23 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Malinka.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="left" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="top" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="height" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="width" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="state" Type="System.Windows.WindowState" Scope="User">
-      <Value Profile="(Default)">Normal</Value>
-    </Setting>
     <Setting Name="rememberMe" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="lastUser" Type="Malinka.Models.LoginUser" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="themeIsDark" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
-    <Setting Name="lang" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ru-RU</Value>
-    </Setting>
     <Setting Name="contactsWidth" Type="System.Windows.GridLength" Scope="User">
       <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="lang" Type="Malinka.Lang.Models.Language" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MainWindowSettings" Type="Malinka.Models.WindowSettings" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="malinkaUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/LiptonOlolo/Malinka</Value>
     </Setting>
   </Settings>
 </SettingsFile>

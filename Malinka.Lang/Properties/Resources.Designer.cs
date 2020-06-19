@@ -61,6 +61,24 @@ namespace Malinka.Lang.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Change the language.
+        /// </summary>
+        public static string ChangeLanguageEN {
+            get {
+                return ResourceManager.GetString("ChangeLanguageEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на You must restart the app to apply settings, do you want to do this now?.
+        /// </summary>
+        public static string ChangeLanguageEN_Restart {
+            get {
+                return ResourceManager.GetString("ChangeLanguageEN_Restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Написать сообщение....
         /// </summary>
         public static string ChatMessageBox {
@@ -106,20 +124,11 @@ namespace Malinka.Lang.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Continue in English.
+        ///   Ищет локализованную строку, похожую на Ночной режим.
         /// </summary>
-        public static string ContinueInEnglish {
+        public static string DarkMode {
             get {
-                return ResourceManager.GetString("ContinueInEnglish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на You must restart the app to apply settings, do you want to do this now?.
-        /// </summary>
-        public static string ContinueInEnglish_Restart {
-            get {
-                return ResourceManager.GetString("ContinueInEnglish_Restart", resourceCulture);
+                return ResourceManager.GetString("DarkMode", resourceCulture);
             }
         }
         
@@ -147,6 +156,33 @@ namespace Malinka.Lang.Properties {
         public static string IsVerified {
             get {
                 return ResourceManager.GetString("IsVerified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на О программе.
+        /// </summary>
+        public static string MalinkaAbout {
+            get {
+                return ResourceManager.GetString("MalinkaAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Malinka Desktop.
+        /// </summary>
+        public static string MalinkaDesktop {
+            get {
+                return ResourceManager.GetString("MalinkaDesktop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Версия {0}.
+        /// </summary>
+        public static string MalinkaVersion {
+            get {
+                return ResourceManager.GetString("MalinkaVersion", resourceCulture);
             }
         }
         
@@ -283,6 +319,15 @@ namespace Malinka.Lang.Properties {
         public static string Result_SucessfulSignUp {
             get {
                 return ResourceManager.GetString("Result_SucessfulSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выбрать.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
             }
         }
         

@@ -1,11 +1,10 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:dialogsControls="clr-namespace:MaterialDesignXaml.DialogsHelper.Controls;assembly=MaterialDesignXaml.DialogsHelper"
-    xmlns:helper="clr-namespace:MaterialDesignXaml.DialogsHelper;assembly=MaterialDesignXaml.DialogsHelper"
     xmlns:material="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:res="clr-namespace:Malinka.Lang.Properties;assembly=Malinka.Lang"
-    xmlns:controls="clr-namespace:Malinka.Controls">
+    xmlns:dialogsControls="clr-namespace:MaterialDesignXaml.DialogsHelper.Controls;assembly=MaterialDesignXaml.DialogsHelper"
+    xmlns:helper="clr-namespace:MaterialDesignXaml.DialogsHelper;assembly=MaterialDesignXaml.DialogsHelper">
 
     <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatButton}" x:Key="FlatButton">
         <Setter Property="Margin" Value="5"/>

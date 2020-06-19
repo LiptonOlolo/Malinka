@@ -9,12 +9,13 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <material:BundledTheme BaseTheme="Light" 
-                                       PrimaryColor="Red" 
-                                       SecondaryColor="Red"/>
+                <material:BundledTheme BaseTheme="Dark" 
+                                       PrimaryColor="Blue" 
+                                       SecondaryColor="LightBlue"/>
 
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml"/>
 
+                <ResourceDictionary Source="pack://application:,,,/Styles/BaseMarginControlStyle.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Styles/Control.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Styles/TextBlock.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Styles/StackPanel.xaml"/>
@@ -25,8 +26,6 @@
                 <ResourceDictionary Source="pack://application:,,,/Styles/ItemsControl.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Styles/HyperLink.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Styles/Border.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Styles/PackIcon.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Styles/CheckBox.xaml"/>
 
                 <ResourceDictionary Source="pack://application:,,,/Dialogs/BaseDialogView.xaml"/>
             </ResourceDictionary.MergedDictionaries>

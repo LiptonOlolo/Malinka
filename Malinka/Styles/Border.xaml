@@ -12,8 +12,4 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
-    <Style TargetType="Border" x:Key="Border5Margin">
-        <Setter Property="Margin" Value="5"/>
-    </Style>
-
 </ResourceDictionary>

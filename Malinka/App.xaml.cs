@@ -3,9 +3,12 @@ using Malinka.API.Client.Interfaces;
 using Malinka.API.Providers;
 using Malinka.Client;
 using Malinka.Client.Design;
+using Malinka.Controls.ChatLeftMenu;
+using Malinka.Core.Models;
 using Malinka.Dialogs;
 using Malinka.Dialogs.Manager;
 using Malinka.Dialogs.Settings;
+using Malinka.Helpers;
 using Malinka.Properties;
 using Malinka.ViewModels;
 using Malinka.Views;
@@ -30,7 +33,9 @@ namespace Malinka
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            var culture = new CultureInfo(Settings.Default.lang);
+            SettingsHelper.HandleSettigns();
+
+            var culture = new CultureInfo(Settings.Default.lang.ShortName);
 
             Thread.CurrentThread.CurrentCulture = culture;
             Thread.CurrentThread.CurrentUICulture = culture;
@@ -38,6 +43,8 @@ namespace Malinka
             CultureInfo.DefaultThreadCurrentUICulture = culture;
 
             FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement), new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+
+            ThemeHelper.SetTheme(Settings.Default.MainWindowSettings.ThemeIsDark);
 
             base.OnStartup(e);
         }
@@ -55,6 +62,7 @@ namespace Malinka
             ViewModelLocationProvider.Register<ConnectionView, ConnectionViewModel>();
             ViewModelLocationProvider.Register<LoginView, LoginViewModel>();
             ViewModelLocationProvider.Register<MainView, MainViewModel>();
+            ViewModelLocationProvider.Register<MainMenu, MainMenuViewModel>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -65,11 +73,14 @@ namespace Malinka
             //dialog identifier
             containerRegistry.RegisterDelegate<IDialogIdentifier>(x => new DialogIdentifier("rootdialog"), Reuse.Singleton, "rootdialog");
 
+            //current user
+            containerRegistry.RegisterSingleton<MalinkaUser>();
+
+            //menu status
+            containerRegistry.RegisterSingleton<MainMenuStatus>();
+
             //events
             containerRegistry.RegisterSingleton<PubSubEvent>();
-
-            //views
-            containerRegistry.RegisterSingleton<MainView>();
 
             //message queue
             containerRegistry.RegisterSingleton<ISnackbarMessageQueue, SnackbarMessageQueue>();
@@ -91,6 +102,7 @@ namespace Malinka
             //dialog views
             containerRegistry.RegisterDialogView<SignUpView, SignUpViewModel>();
             containerRegistry.RegisterDialogView<SettingsView, SettingsViewModel>();
+            containerRegistry.RegisterDialogView<LanguageSelectorView, LanguageSelectorViewModel>();
 
             //navigation views
             containerRegistry.RegisterForNavigation<ConnectionView>();

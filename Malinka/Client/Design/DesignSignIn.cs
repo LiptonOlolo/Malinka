@@ -2,6 +2,7 @@
 using Malinka.Core.Models;
 using Malinka.Core.Models.Enums;
 using Malinka.Core.Models.Responses;
+using System;
 using System.Threading.Tasks;
 
 namespace Malinka.Client.Design
@@ -13,7 +14,7 @@ namespace Malinka.Client.Design
             return Task.FromResult(new MalinkaResponse<MalinkaUser, LoginResponse>(new MalinkaUser
             {
                 Id = 1337,
-                Name = "Design name, very long name",
+                Name = $"Design name",
                 Verified = true
             }, ResponseCode.Ok, new LoginResponse(true)));
         }

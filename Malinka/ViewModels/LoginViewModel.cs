@@ -1,16 +1,14 @@
 ﻿using DevExpress.Mvvm;
 using DryIoc;
 using Malinka.API.Client.Interfaces;
+using Malinka.Core.Models;
 using Malinka.Dialogs.Manager;
-using Malinka.Helpers;
-using Malinka.Lang.Properties;
 using Malinka.Models;
 using Malinka.Properties;
 using Malinka.ViewModels.Base;
 using MaterialDesignXaml.DialogsHelper;
 using MaterialDesignXaml.DialogsHelper.Enums;
 using Prism.Regions;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -68,7 +66,8 @@ namespace Malinka.ViewModels
         public LoginViewModel(IRegionManager regionManager,
                               IDialogManager dialogManager,
                               ISignIn signIn,
-                              IContainer container)
+                              MalinkaUser user,
+                              IContainer container) : base(user)
         {
             settings = Settings.Default;
             dialogIdentifier = container.ResolveRootDialogIdentifier();
@@ -77,7 +76,7 @@ namespace Malinka.ViewModels
 
             SignInCommand = new AsyncCommand(SignIn, () => settings.lastUser.IsValid);
             SignUpCommand = new DelegateCommand(dialogManager.ShowSignUpAsync);
-            SetEnglishCommand = new DelegateCommand(SetEnglish);
+            ShowLanguageSelectorCommand = new DelegateCommand(() => dialogManager.ShowLanguageSelector(dialogIdentifier));
         }
 
         /// <summary>
@@ -88,26 +87,12 @@ namespace Malinka.ViewModels
         /// <summary>
         /// Set English command.
         /// </summary>
-        public ICommand SetEnglishCommand { get; }
+        public ICommand ShowLanguageSelectorCommand { get; }
 
         /// <summary>
         /// Sign up command.
         /// </summary>
         public ICommand SignUpCommand { get; }
-
-        /// <summary>
-        /// Set English.
-        /// </summary>
-        private async void SetEnglish()
-        {
-            Settings.Default.lang = "en-US";
-            Settings.Default.Save();
-
-            var res = await dialogIdentifier.ShowMessageBoxAsync(Resources.ContinueInEnglish_Restart, MaterialMessageBoxButtons.YesNo);
-
-            if (res == MaterialMessageBoxButtons.Yes)
-                ProcessHelper.RestartApp();
-        }
 
         /// <summary>
         /// Sign in.

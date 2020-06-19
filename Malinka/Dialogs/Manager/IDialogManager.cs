@@ -1,4 +1,7 @@
-﻿namespace Malinka.Dialogs.Manager
+﻿using Malinka.Core.Models;
+using MaterialDesignXaml.DialogsHelper;
+
+namespace Malinka.Dialogs.Manager
 {
     /// <summary>
     /// Dialog manager.
@@ -14,6 +17,12 @@
         /// <summary>
         /// Show settings dialog.
         /// </summary>
-        void ShowSettings();
+        void ShowSettings(MalinkaUser user);
+
+        /// <summary>
+        /// Show language selector.
+        /// </summary>
+        /// <returns></returns>
+        void ShowLanguageSelector(IDialogIdentifier dialogIdentifier);
     }
 }

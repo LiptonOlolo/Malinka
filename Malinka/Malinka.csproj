@@ -103,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\HyperTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\MenuButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,11 +127,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialogs\Settings\LanguageSelectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dialogs\Settings\SettingsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Dialogs\SignUpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\BaseMarginControlStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,10 +151,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\CheckBox.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Styles\HyperLink.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,15 +159,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\PackIcon.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Styles\ParticipantStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Controls\ChatLeftMenu.xaml">
+    <Page Include="Controls\ChatLeftMenu\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,7 +235,13 @@
     <Compile Include="Client\Design\DesignSignIn.cs" />
     <Compile Include="ContainerHelper.cs" />
     <Compile Include="Controls\BindableUserControl.cs" />
+    <Compile Include="Controls\ChatLeftMenu\MainMenuStatus.cs" />
+    <Compile Include="Controls\ChatLeftMenu\MainMenuViewModel.cs" />
+    <Compile Include="Controls\Classes\HyperTextBlockBase.cs" />
     <Compile Include="Controls\Classes\MenuButtonBase.cs" />
+    <Compile Include="Controls\HyperTextBlock.xaml.cs">
+      <DependentUpon>HyperTextBlock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MenuButton.xaml.cs">
       <DependentUpon>MenuButton.xaml</DependentUpon>
     </Compile>
@@ -243,7 +253,9 @@
     </Compile>
     <Compile Include="Converters\ByteBitmapSourceConverter.cs" />
     <Compile Include="Converters\IntToVisibilityConverter.cs" />
-    <Compile Include="Dialogs\BaseDialogViewModel.cs" />
+    <Compile Include="Dialogs\Base\BaseSelectorViewModel.cs" />
+    <Compile Include="Dialogs\Base\ClosableDialogViewModel.cs" />
+    <Compile Include="Dialogs\Base\CanClosableDialogViewModel.cs" />
     <Compile Include="Dialogs\CloseDialogButtons.xaml.cs">
       <DependentUpon>CloseDialogButtons.xaml</DependentUpon>
     </Compile>
@@ -251,6 +263,10 @@
     <Compile Include="Dialogs\DialogNameAttribute.cs" />
     <Compile Include="Dialogs\Manager\IDialogManager.cs" />
     <Compile Include="Dialogs\Manager\IDialogViewFactory.cs" />
+    <Compile Include="Dialogs\Settings\LanguageSelectorView.xaml.cs">
+      <DependentUpon>LanguageSelectorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Settings\LanguageSelectorViewModel.cs" />
     <Compile Include="Dialogs\Settings\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
     </Compile>
@@ -262,12 +278,14 @@
     <Compile Include="Dialogs\Manager\DialogViewFactory.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Helpers\ProcessHelper.cs" />
-    <Compile Include="Models\Language.cs" />
+    <Compile Include="Helpers\SettingsHelper.cs" />
+    <Compile Include="Helpers\ThemeHelper.cs" />
     <Compile Include="Models\LoginUser.cs" />
     <Compile Include="Models\SignUpUser.cs" />
+    <Compile Include="Models\WindowSettings.cs" />
     <Compile Include="Regions.cs" />
-    <Compile Include="Controls\ChatLeftMenu.xaml.cs">
-      <DependentUpon>ChatLeftMenu.xaml</DependentUpon>
+    <Compile Include="Controls\ChatLeftMenu\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Templates\Chat\MessageTemplateSelector.cs" />
     <Compile Include="UI\BoundPasswordBox.cs" />
@@ -332,6 +350,7 @@
   <ItemGroup>
     <Resource Include="Images\back.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

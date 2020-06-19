@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ChangeLanguageEN" xml:space="preserve">
+    <value>Change the language</value>
+  </data>
+  <data name="ChangeLanguageEN_Restart" xml:space="preserve">
+    <value>You must restart the app to apply settings, do you want to do this now?</value>
+  </data>
   <data name="ChatMessageBox" xml:space="preserve">
     <value>Написать сообщение...</value>
   </data>
@@ -132,11 +138,8 @@
   <data name="Connecting" xml:space="preserve">
     <value>Подключение</value>
   </data>
-  <data name="ContinueInEnglish" xml:space="preserve">
-    <value>Continue in English</value>
-  </data>
-  <data name="ContinueInEnglish_Restart" xml:space="preserve">
-    <value>You must restart the app to apply settings, do you want to do this now?</value>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Ночной режим</value>
   </data>
   <data name="EMail" xml:space="preserve">
     <value>EMail</value>
@@ -146,6 +149,15 @@
   </data>
   <data name="IsVerified" xml:space="preserve">
     <value>Верифицированный пользователь</value>
+  </data>
+  <data name="MalinkaAbout" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="MalinkaDesktop" xml:space="preserve">
+    <value>Malinka Desktop</value>
+  </data>
+  <data name="MalinkaVersion" xml:space="preserve">
+    <value>Версия {0}</value>
   </data>
   <data name="Menu_Contacts" xml:space="preserve">
     <value>Контакты</value>
@@ -192,6 +204,9 @@
   <data name="Result_SucessfulSignUp" xml:space="preserve">
     <value>Аккаунт зарегистрирован
 Пароль отправлен вам на почту</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Выбрать</value>
   </data>
   <data name="SelectChatDialog" xml:space="preserve">
     <value>Выберите, кому хотели бы написать</value>
